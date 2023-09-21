@@ -1,0 +1,70 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+.main{
+    @include flex-box(column, flex-start);
+    &__top-section{
+        position:relative;
+        width:100%;
+        height:auto;
+        z-index: 1;
+        background: linear-gradient(rgba(50, 50, 50, 0.5));
+        & .Img-hero{
+            width:100%;
+            height:auto;
+            z-index: 0;
+        }
+        & .intro-words{
+            position:absolute;
+            top:17rem;
+            left:4.2rem;
+            color:$white;
+        }
+    }
+    &__about-section{
+        color:$BandSite-Black;
+        @include flex-box(column, flex-start);
+        align-self: center;
+        width:90%;
+        padding:2rem 4rem;
+        & .about-line{
+            padding-bottom:2rem;
+        }
+        & .about-content{
+            width:80%;
+            align-self: center;
+            margin-left: 1rem;
+            & .quotation{
+                width:85%;
+                margin:2rem 0 .5rem 0;
+                font-weight: 600;
+            }
+            & .quoter-name{
+                font-size: 14px;
+                margin-bottom: 2rem;
+                font-weight: 550;
+            }
+            & .song-name{
+                padding-bottom: 1rem;
+            }
+            & .about-paragraphs{
+                @include flex-box(row, space-between);
+                & .about-details{
+                    margin-right: 1rem;;
+                }
+            }
+        }
+        & .gallery-name{
+            margin:2rem 0 .5rem 0;
+        }
+        & .photos{
+            width:100%;
+            @include flex-box(row, center);
+            flex-wrap: wrap;
+            & .img{
+                width:30%;
+                margin:1rem;
+            }
+        }
+    }
+}
