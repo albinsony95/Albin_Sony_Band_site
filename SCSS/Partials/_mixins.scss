@@ -1,6 +1,19 @@
+@use 'variables' as *;
 
 @mixin flex-box($direction, $justifyContent){
     display:flex;
     flex-direction:$direction;
     justify-content: $justifyContent;
 }
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }

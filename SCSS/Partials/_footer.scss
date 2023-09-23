@@ -2,6 +2,50 @@
 @use './variables' as *;
 
 .footer{
+    color:$silver;
     width:100%;
     background-color: $BandSite-Black;
+    padding:2rem 4rem;
+    @include flex-box(column, flex-start);
+    &__social-section{
+        position:relative;
+        @include flex-box(row, flex-start);
+        align-items: center;
+        max-width:100%;
+        & h2{
+            color:$Albaster;
+            font-weight: 510;
+            padding-right: 1rem;
+        }
+        & .social{
+            @include flex-box(row, flex-start);
+            & .img-social{
+                padding-left: 1rem;
+                width:30px;
+                height: 30px;
+            }
+        }
+        & .company-name{
+        position:absolute;
+        font-weight: 300;
+        right:10rem;
+        }
+    }
+    &__contact-section{
+        @include flex-box(row, flex-start); 
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        & .contact{
+            width:15%;
+            height:10rem;
+            @include flex-box(column, flex-start); 
+            margin-right: 2rem;
+            & .email{
+                align-self: baseline;
+            }
+        }
+    }
+}
+.bottom-spacer{
+    margin-bottom: 1rem;
 }
