@@ -1,14 +1,18 @@
 @use './mixins' as *;
 @use './variables' as *;
+@use './Global' as *;
 
 .main{
     @include flex-box(column, flex-start);
     &__top-section{
-        position:relative;
+        // position:relative;
         width:100%;
-        height:auto;
+        height:100vh;
         z-index: 1;
-        background: linear-gradient(rgba(50, 50, 50, 0.5));
+        // background-image: url("../../Assets/Images/hero-bio.jpg");
+        background: linear-gradient(rgba(50, 50, 50, 0.5),(rgba(39, 159, 189, 0.5))), 
+                    url("../../Assets/Images/hero-bio.jpg")center/cover no-repeat;
+
         & .Img-hero{
             width:100%;
             height:auto;
@@ -54,6 +58,10 @@
                 }
             }
         }
+        .gallery{
+            background-color: $Albaster;
+            width: 100%;
+        }
         & .gallery-name{
             margin:2rem 0 .5rem 0;
         }
@@ -61,9 +69,17 @@
             width:100%;
             @include flex-box(row, center);
             flex-wrap: wrap;
+            @include mobile{
+                @include flex-box(column, center);
+                width:100%;
+            }
             & .img{
                 width:30%;
                 margin:1rem;
+                @include mobile{
+                    width:100%;
+                    margin-right:0%;
+                }
             }
         }
     }

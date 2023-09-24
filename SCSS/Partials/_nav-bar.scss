@@ -1,13 +1,13 @@
-@use './mixins' as *;
-@use './variables' as *;
+@use './_mixins' as *;
+@use './_variables' as *;
 
 .header{
     width:100%;
     background-color:$black;
+    height:4rem;
+    padding:2rem 0 0 2rem;
     &__company-name{
-        font-weight: 300;
         color:silver;
-        padding:1rem 5rem;
         margin: 0%;
     }
     @include flex-box(row, flex-start);
@@ -18,13 +18,13 @@
         @include flex-box(row, flex-start);
 
         & li{
-            margin-left: 2rem;
-            padding-top: 2.2rem;
+            margin-left: 3rem;
             & a{
                 align-self: center;
                 z-index:5;
                 font-size:22px;
                 color:silver;
+                text-decoration: none;
             }
         } 
     } 

@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use '_variables' as *;
 
 @mixin flex-box($direction, $justifyContent){
     display:flex;
@@ -7,13 +7,12 @@
 }
 
 @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-      @content;
+    @media screen and (max-width: 1030px) {
+        @content;
     }
-  }
-  
-  @mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-      @content;
+}
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+        @content;
     }
-  }
+}
