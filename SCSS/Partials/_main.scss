@@ -12,27 +12,56 @@
         // background-image: url("../../Assets/Images/hero-bio.jpg");
         background: linear-gradient(rgba(50, 50, 50, 0.5),(rgba(39, 159, 189, 0.5))), 
                     url("../../Assets/Images/hero-bio.jpg")center/cover no-repeat;
-
-        & .Img-hero{
-            width:100%;
-            height:auto;
-            z-index: 0;
+        @include tablet{
+            height:60vh;  
+        }
+        @include mobile{
+            height:50vh;
         }
         & .intro-words{
             position:absolute;
-            top:17rem;
+            top:25rem;
             left:4.2rem;
             color:$white;
+            @include tablet{
+                font-size:40px;
+                left:2rem;
+                top:20;
+            }
+            @include mobile{
+                font-size:30px;
+                left:1rem;
+                top:15rem;
+            }
         }
     }
     &__about-section{
         color:$BandSite-Black;
         @include flex-box(column, flex-start);
         align-self: center;
-        width:90%;
+        width:100%;
         padding:2rem 4rem;
+        @include tablet{
+            padding:.1rem .1rem .1rem .1rem;
+            width:95%;
+        }
+        @include mobile{
+            padding:.1rem .1rem .1rem .1rem;
+            width:100%;
+        }
         & .about-line{
             padding-bottom:2rem;
+            @include tablet{
+                font-size: 30px;
+                font-weight: 510;
+                padding:1rem;
+            }
+            @include mobile{
+                font-size: 30px;
+                font-weight: 510;
+                padding:.5rem;
+    
+            }
         }
         & .about-content{
             width:80%;
@@ -42,19 +71,62 @@
                 width:85%;
                 margin:2rem 0 .5rem 0;
                 font-weight: 600;
+                @include tablet{
+                    font-size: 25px;
+                    font-weight: 510;
+                    margin:1rem 0 .5rem 0;
+                    width:99%;
+                }
+                @include mobile{
+                    font-size: 20px;
+                    font-weight: 510;
+                    margin:1rem 0 .5rem 0;
+                    width:99%;
+                }
             }
             & .quoter-name{
                 font-size: 14px;
                 margin-bottom: 2rem;
                 font-weight: 550;
+                @include mobile{
+                    font-size: 20px;
+                    font-weight: 510;
+                }
+                font-size: 22px;
+                font-weight: 510;
             }
             & .song-name{
                 padding-bottom: 1rem;
+                color:$black;
+                @include tablet{
+                    font-size: 30px;
+                    font-weight: 510;
+                }
+                @include mobile{
+                    font-size: 25px;
+                    font-weight: 400;
+        
+                }
             }
             & .about-paragraphs{
                 @include flex-box(row, space-between);
+                @include tablet{
+                    @include flex-box(row, space-between);
+                    font-size: 25px;
+                }
+                @include mobile{
+                    @include flex-box(column, space-between);
+                    font-size:15px;
+                }
+
                 & .about-details{
-                    margin-right: 1rem;;
+                    margin-right: 1rem;
+                    @include tablet{
+                        font-size: 25px;
+                    }
+                    @include mobile{
+                        font-size:15px;
+                    }
                 }
             }
         }
@@ -71,14 +143,18 @@
             flex-wrap: wrap;
             @include mobile{
                 @include flex-box(column, center);
-                width:100%;
+                width:fit-content;
             }
-            & .img{
+            & .imge{
                 width:30%;
                 margin:1rem;
+                @include tablet{
+                    width:30%;
+                    margin:5px;
+                }
                 @include mobile{
                     width:100%;
-                    margin-right:0%;
+                    margin:5px;
                 }
             }
         }

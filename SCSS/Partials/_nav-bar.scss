@@ -5,18 +5,31 @@
     width:100%;
     background-color:$black;
     height:4rem;
-    padding:2rem 0 0 2rem;
+    padding:2rem 0 0 0rem;
+    @include flex-box(row, flex-start);
+    // flex-wrap: wrap;
+    @include mobile{
+        @include flex-box(column,center);
+        align-items: center;
+        width:100%;
+        height: fit-content;
+    }
     &__company-name{
         color:silver;
         margin: 0%;
+        padding-left: 2rem;
+        @include mobile{
+            width:13rem;
+
+        }
     }
-    @include flex-box(row, flex-start);
-    flex-wrap: wrap;
     &__nav-bar ul{
 
         height:100%;
         @include flex-box(row, flex-start);
-
+        @include mobile{
+            @include flex-box(row, space-between);
+        }
         & li{
             margin-left: 3rem;
             & a{
@@ -31,7 +44,10 @@
 }
 .active-tab{
     border-bottom: 4px solid white;
-    & a{
-        color:white;
+    @include mobile{
+        border-bottom: 0px;
     }
+}
+.whitey{
+    color:white;
 }
