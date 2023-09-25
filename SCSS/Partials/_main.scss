@@ -145,12 +145,16 @@
                 @include flex-box(column, center);
                 width:fit-content;
             }
-            & .img{
+            & .imge{
                 width:30%;
                 margin:1rem;
+                @include tablet{
+                    width:30%;
+                    margin:5px;
+                }
                 @include mobile{
                     width:100%;
-                    margin-right:0%;
+                    margin:5px;
                 }
             }
         }

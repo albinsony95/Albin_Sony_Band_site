@@ -4,18 +4,20 @@
 .footer{
     color:$silver;
     width:100%;
+    height: fit-content;
     background-color: $BandSite-Black;
-    padding:2rem 4rem;
+    padding:2rem 0rem;
     @include flex-box(column, flex-start);
     &__social-section{
         position:relative;
         @include flex-box(row, flex-start);
         align-items: center;
-        max-width:100%;
+        width:100%;
         & h2{
             color:$Albaster;
             font-weight: 510;
             padding-right: 1rem;
+            padding-left: 10px;
         }
         & .social{
             @include flex-box(row, flex-start);
@@ -29,12 +31,21 @@
         position:absolute;
         width:8rem;
         right:10rem;
+        @include mobile{
+            bottom:-31rem;
+            left:10px;
+        }
+        }
+        @include mobile{
+            @include flex-box(column, flex-start);
+            align-items: flex-start;   
         }
     }
     &__contact-section{
         @include flex-box(row, flex-start); 
         margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 4rem;
+        margin-left: 10px;
         & .contact{
             width:20%;
             height:10rem;
@@ -43,7 +54,21 @@
             & .email{
                 align-self: baseline;
             }
+            @include tablet{
+                width:28%;
+            }
+            @include mobile{
+                width:fit-content;
+                height:fit-content;
+                margin-bottom: 1rem;
+            }
         }
+        @include mobile{
+            @include flex-box(column, flex-start);      
+        }
+    }
+    .copyright{
+        padding-left: 10px;
     }
 }
 .name-company{
