@@ -18,7 +18,7 @@
     <nav class="header__nav-bar">
         <ul>
             <li class="active-tab"><a class="whitey" href="index.html">Biography</a></li>
-            <li><a>Shows</a></li>
+            <li><a href="pages/shows.html">Shows</a></li>
         </ul>
     </nav>
 </header>
@@ -72,6 +72,23 @@
             </section>
         </section>
     </section>
+    <section class="main__comment-container">
+        <h2 class="main__comment-heading">Join the Conversation</h2>
+        <article class="main__comment-container__box">
+            <img class="main__comment-container__box--img-commentor" src="./Assets/Images/Mohan-muruge.jpg"/>
+            <form class="main__comment-container__box--form">
+                <label class="main__comment-container__box--form--lName" for="cName">NAME</label>
+                <input type="text" id="cName" placeholder="Enter your Name">
+                <label class="main__comment-data" for="main__cComment">COMMENT</label>
+                <textarea type="text" id="cComment" placeholder="Add a new comment"></textarea>
+                <button id="bcomment">COMMENT</button>
+            </form>
+        </article>
+    </section>
+    <section class="main__comDisplay" id="commentContainer">
+        <script src="./scripts/index-page.js"></script>
+    </section>
+    
 </main>
 <footer class="footer">
     <section class="footer__social-section">

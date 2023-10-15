@@ -16,3 +16,8 @@
         @content;
     }
 }
+@mixin desktop {
+    @media screen and (min-width: 1030px) {
+        @content;
+    }
+}
