@@ -10,13 +10,15 @@
         padding-left: 20%;
         @include tablet{
             width: 80%;
+            padding-left: 5%;
         }
         @include mobile{
             width:90%; 
+            padding-left: 5%;
         }
         &__box{
             @include flex-box(row, center);
-            width: 100%;
+            width: 90%;
             align-self: center;
             margin-bottom: 2rem;
             border-bottom: 2px solid $Mercury;
@@ -30,13 +32,10 @@
                 @include flex-box(column, center);
                 width:90%;
                 margin-left: 1rem;
-                // @include desktop{
-                //     min-width:10rem;
-                // }
                 ::placeholder {
                     padding-left: 3px;
                         color:$BandSite-Black;
-                        opacity: 1; /* Firefox */
+                        opacity: 1;
                 }
                 &--lName{
                     font-size: 14px;
@@ -73,6 +72,10 @@
                     font-weight: 600;
                     margin-bottom: 2rem;
                     border-radius: 5px;
+                    :hover{
+                        background-color: $silver;
+                        color: $BandSite-Black;
+                    }
                 }   
             }
         }
