@@ -63,6 +63,10 @@ textarea {
   resize: none;
 }
 
+tr {
+  padding-bottom: 2rem;
+}
+
 .showMain {
   display: flex;
   flex-direction: column;
@@ -86,45 +90,47 @@ textarea {
 }
 .showMain__top-section--albumName {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 20%;
   color: white;
+  font-size: 30px;
   font-weight: 450;
 }
 @media screen and (max-width: 1030px) {
   .showMain__top-section--albumName {
     font-size: 40px;
     left: 5%;
-    top: 20;
+    top: 20%;
   }
 }
 @media screen and (max-width: 767px) {
   .showMain__top-section--albumName {
-    font-size: 30px;
+    font-size: 25px;
     left: 5%;
-    top: 15rem;
+    top: 25%;
   }
 }
 .showMain__top-section--intro-words {
   position: absolute;
-  top: 55%;
+  top: 40%;
   left: 20%;
   color: white;
-  max-width: 25rem;
+  max-width: 50rem;
   font-size: 45px;
 }
 @media screen and (max-width: 1030px) {
   .showMain__top-section--intro-words {
-    font-size: 40px;
+    font-size: 60px;
     left: 5%;
-    top: 20;
+    top: 25%;
   }
 }
 @media screen and (max-width: 767px) {
   .showMain__top-section--intro-words {
-    font-size: 30px;
+    font-size: 35px;
     left: 5%;
-    top: 15rem;
+    top: 30%;
+    line-height: 3rem;
   }
 }
 .showMain__top-section__soundcloud {
@@ -134,19 +140,40 @@ textarea {
   height: 10rem;
   width: 35%;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1030px) {
   .showMain__top-section__soundcloud {
-    top: 25rem;
+    top: 32rem;
     left: 5%;
     height: 10rem;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .showMain__top-section__soundcloud {
+    top: 50%;
+    left: 5%;
+    height: 7rem;
     width: 90%;
   }
 }
-@media screen and (max-width: 1030px) {
-  .showMain__top-section__soundcloud {
-    top: 25rem;
-    left: 5%;
-    height: 10rem;
-    width: 90%;
-  }
+.showMain__show {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 10rem;
+}
+.showMain__show--heading {
+  color: #323232;
+}
+.showMain__show__box {
+  margin-top: 2rem;
+  margin-left: 3rem;
+}
+.showMain__show__box__table__headrow--heading {
+  color: #AFAFAF;
+  padding: 0 0 2rem 0;
+}
+.showMain__show__box__table__datarow {
+  border-bottom: 2px solid #e1e1e1;
+  padding-bottom: 2rem;
 }/*# sourceMappingURL=shows.css.map */

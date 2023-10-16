@@ -3,7 +3,7 @@
 
 .header{
     width:100%;
-    background-color:$black;
+    background-color:$BandSite-Black;
     height:4rem;
     padding:2rem 0 0 0rem;
     @include flex-box(row, flex-start);
@@ -20,6 +20,7 @@
         padding-left: 2rem;
         @include mobile{
             width:13rem;
+            padding:1rem;
 
         }
     }
@@ -32,6 +33,7 @@
         }
         & li{
             margin-left: 3rem;
+            width: 50%;
             & a{
                 align-self: center;
                 z-index:5;
@@ -44,9 +46,7 @@
 }
 .active-tab{
     border-bottom: 4px solid white;
-    @include mobile{
-        border-bottom: 0px;
-    }
+
 }
 .whitey{
     color:white;

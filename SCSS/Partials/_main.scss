@@ -159,48 +159,6 @@
             }
         }
     }
-    &__comment-container{
-        padding-left: 2rem;
-        width:40%;
-        &__box{
-            @include flex-box(row, center);
-            &--img-commentor{
-                vertical-align: middle;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-            }
-            &--form{
-                @include flex-box(column, center);
-                width:90%;
-                // @include desktop{
-                //     min-width:10rem;
-                // }
-                ::placeholder {
-                        color:$BandSite-Black;
-                        opacity: 1; /* Firefox */
-                    }
-            }
-        }  
-    }
-    &__comDisplay{
-        @include flex-box(column, center);
-        &__box{
-            @include flex-box(row, flex-start);
-            &__imge{
-                vertical-align: middle;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-            }
-            &__box1{
-                @include flex-box(column, flex-start);
-                &__box2{
-                    @include flex-box(row, flex-start);
-                }
-            }
-        }
-    }
 }
 
 
