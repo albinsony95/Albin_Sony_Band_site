@@ -16,8 +16,8 @@
         @content;
     }
 }
-@mixin desktop {
-    @media screen and (min-width: 1031px) {
-        @content;
-    }
-}
+// @mixin desktop {
+//     @media screen and (min-width: 1031px) {
+//         @content;
+//     }
+// }

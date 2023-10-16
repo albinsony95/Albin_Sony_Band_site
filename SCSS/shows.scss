@@ -4,103 +4,130 @@
 .showMain{
     @include flex-box(column, flex-start);
     &__top-section{
-        // position:relative;
+        @include flex-box(column, center);
         width:100%;
         height:100vh;
         z-index: 1;
-        // background-image: url("../../Assets/Images/hero-bio.jpg");
         background: linear-gradient(rgba(50, 50, 50, 0.5),(rgba(39, 159, 189, 0.5))), 
                     url("../../Assets/Images/Photo-gallery-3.jpg")center/cover no-repeat;
         
         @include tablet{
-        height:60vh; 
+        height:80vh; 
         }
         @include mobile{
-            height:50vh;
+            height:70vh;
         }
-        &--albumName{
-            position:absolute;
-            top:30%;;
-            left:20%;
-            color:$white;
-            font-size: 30px;
-            font-weight: 450;
+        &__content{
+            @include flex-box(row, flex-start);
             @include tablet{
-                font-size:40px;
-                left:5%;
-                top:20%;
+                @include flex-box(column, flex-start);
             }
             @include mobile{
-                font-size:25px;
-                left:5%;
-                top:25%;
+
             }
-        }
-        &--intro-words{
-            position:absolute;
-            top:40%;
-            left:20%;;
-            color:$white;
-            max-width:50rem;
-            font-size: 45px;
-            @include tablet{
-                font-size:60px;
-                left:5%;
-                top:25%;
-            }
-            @include mobile{
-                font-size:35px;
-                left:5%;
-                top:30%;
-                line-height: 3rem;
-            }
-        }
-        &__soundcloud{
-            position:absolute;
-            top:50%;;
-            left:50%;
-            height:10rem;
-            width:35%;
-            @include tablet{
-                top:32rem;
-                left:5%;
-                height:10rem;
+            &__text{
+                padding:2rem;
                 width:50%;
+                &--albumName{
+                    color:$white;
+                    font-size: 30px;
+                    font-weight: 450;
+                    margin-bottom: 2rem;
+                    @include tablet{
+                        font-size:40px;
+                    }
+                    @include mobile{
+                        font-size:25px;
+                    }
+                }
+                &--intro-words{
+                    color:$white;
+                    max-width:50rem;
+                    font-size: 45px;
+                    @include tablet{
+                        font-size:60px;
+                    }
+                    @include mobile{
+                        font-size:35px;
+                        line-height: 3rem;
+                    }
+                }
             }
-            @include mobile{
-                top:50%;;
-                left:5%;
-                height:7rem;
-                width:90%;
+            &__soundcloud{
+                padding-top: 1rem;
+                height:10rem;
+                width:35%;
+                @include tablet{
+                    height:10rem;
+                    width:50%;
+                }
+                @include mobile{
+                    height:7rem;
+                    width:90%;
+                }
             }
+            
         }
         
     }
     &__show{
-        @include flex-box(row, flex-start);
-        padding-left: 10rem;
+        @include flex-box(row, center);
+        @include tablet{
+            @include flex-box(column, center);
+            padding: 1rem 1rem 3rem 1rem;
+        }
         &--heading{
             color:$BandSite-Black;
         }
         &__box{
             margin-top: 2rem;
             margin-left: 3rem;
+            width:70%;
+            @include tablet{
+                margin-left: 0rem;
+                width:90%;
+            }
             &__table{
-                // @include flex-box(column, flex-start);
+                @include flex-box(column, flex-start);
                 &__headrow{
-                    // @include flex-box(row, flex-start);
+                    @include flex-box(row, flex-start);
                     &--heading{
                         color: $silver;
                         padding:0 0 2rem 0;
+                        width:25%;
                     }
                 }
                 &__datarow{
-                    border-bottom: 2px solid $Mercury;
-                    padding-bottom: 2rem;
+                    @include flex-box(row, flex-start);
+                    border-bottom:2px solid $silver;
+                    padding: 1rem .5rem 1rem .5rem ;
+                    &__date{
+                        width:25%;
+                    }
+                    &__venue{
+                        width:25%;
+                    }
+                    &__location{
+                        width:25%;
+                    }
+                    &__buybutton{
+                        background-color: $BandSite-Black;
+                    color:$Mercury;
+                    width:10rem;
+                    height:2rem;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    }
+                    
                 }
             }
         }
         
-
     }
+}
+#selecthover:hover{
+    background-color: $silver;
+}
+#selecthover:active{
+    background-color:$silver;
 }
