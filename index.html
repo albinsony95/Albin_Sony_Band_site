@@ -7,17 +7,18 @@
 <title>Band_Site</title>
 <link rel="stylesheet" type="text/css" href="./SCSS/landing.css">
 <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" type="text/javascript"></script>
 </head>
 <body>
 <header class="header">
     <section class="header__logo-section">
         <a href="index.html">
-        <img class="header__company-name" src="./Assets/Logo/Logo-bandsite.svg"/>
+        <img class="header__company-name" src="./Assets/Logo/Logo-bandsite.svg" alt="band site"/>
     </a>
     </section>
     <nav class="header__nav-bar">
         <ul>
-            <li class="active-tab"><a class="whitey" href="index.html">Biography</a></li>
+            <li class="active-tab"><a id="whitey" href="index.html">Biography</a></li>
             <li><a href="pages/shows.html">Shows</a></li>
         </ul>
     </nav>
@@ -29,7 +30,7 @@
     <section class="main__about-section">
         <h2 class="about-line">About the Muscians</h2>
         <article class="about-content">
-            <img class="band-img" src="Assets/Images/band.jpg"/>
+            <img class="band-img" src="Assets/Images/band.jpg" alt="Music Fest"/>
             <p class="quotation">"We push each other to be best. It's not uncommon for one
                 of us to say 'this needs to be better, back to the drawing board'"
             </p>
@@ -60,15 +61,15 @@
         <section class="gallery">
             <h2 class="gallery-name">Photo Gallery</h2>
             <section class="photos">
-                <img class="imge" src="Assets/Images/Photo-gallery-1.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-2.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-3.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-4.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-5.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-6.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-7.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-8.jpg"/>
-                <img class="imge" src="Assets/Images/Photo-gallery-9.jpg"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-1.jpg" alt="Photo-gallery-1"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-2.jpg" alt="Photo-gallery-2"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-3.jpg" alt="Photo-gallery-3"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-4.jpg" alt="Photo-gallery-4"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-5.jpg" alt="Photo-gallery-5"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-6.jpg" alt="Photo-gallery-6"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-7.jpg" alt="Photo-gallery-7"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-8.jpg" alt="Photo-gallery-8"/>
+                <img class="imge" src="Assets/Images/Photo-gallery-9.jpg" alt="Photo-gallery-9"/>
             </section>
         </section>
     </section>
@@ -76,11 +77,11 @@
         <h2 class="main__comment-container__heading">Join the Conversation</h2>
         <section class="main__comment-container__commentBox">
             <article class="main__comment-container__commentBox__box">
-                <img class="main__comment-container__commentBox__box--img-commentor" src="./Assets/Images/Mohan-muruge.jpg"/>
+                <img class="main__comment-container__commentBox__box--img-commentor" src="./Assets/Images/Mohan-muruge.jpg" alt="profile picture"/>
                 <form class="main__comment-container__commentBox__box__form">
                     <label class="main__comment-container__commentBox__box__form--lName" for="cName">NAME</label>
                     <input  class="main__comment-container__commentBox__box__form--cName" type="text" id="cName" placeholder="Enter your Name">
-                    <label class="main__comment-container__commentBox__box__form--lComment" for="main__cComment">COMMENT</label>
+                    <label class="main__comment-container__commentBox__box__form--lComment" for="cComment">COMMENT</label>
                     <textarea class="main__comment-container__commentBox__box__form--Comment" type="text" id="cComment" placeholder="Add a new comment"></textarea>
                     <button class="main__comment-container__commentBox__box__form--btnComment" id="bcomment">COMMENT</button>
                 </form>
@@ -96,13 +97,13 @@
     <section class="footer__social-section">
         <h2 class="get-in-touch">Get in Touch</h2>
         <article class="social">
-            <a href="https://www.instagram.com/accounts/login" target="_blank"><img class="img-social" src="Assets/Icons/SVG/Icon-instagram.svg"/></a>
-            <a href="https://www.facebook.com/login.php" target="_blank"><img class="img-social" src="Assets/Icons/SVG/Icon-facebook.svg"/></a>
-            <a href="https://twitter.com/i/flow/login" target="_blank"><img class="img-social" src="Assets/Icons/SVG/Icon-twitter.svg"/></a>
+            <a href="https://www.instagram.com/accounts/login" target="_blank"><img class="img-social" src="Assets/Icons/SVG/Icon-instagram.svg" alt="Instagram"/></a>
+            <a href="https://www.facebook.com/login.php" target="_blank"><img class="img-social" src="Assets/Icons/SVG/Icon-facebook.svg" alt="Facebook"/></a>
+            <a href="https://twitter.com/i/flow/login" target="_blank"><img class="img-social" src="Assets/Icons/SVG/Icon-twitter.svg" alt="Twitter"/></a>
         </article>
         <article class="company-nam">
             <a href="index.html">
-            <img src="./Assets/Logo/Logo-bandsite.svg"/>
+            <img src="./Assets/Logo/Logo-bandsite.svg" alt="Bandsite"/>
         </a>
         </article>
     </section>

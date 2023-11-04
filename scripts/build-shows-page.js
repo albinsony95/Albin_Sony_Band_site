@@ -4,7 +4,17 @@ let arrayshow=[{date:"Mon Sept 06 2021",venue:"Ronald Lane",location:"San Franci
                 {date:"Sat Nov 06 2021 ",venue:"Hyatt Agency",location:"San Francisco, CA"},
                 {date:"Fri Nov 26 2021",venue:"Moscow Center",location:"San Francisco, CA"},
                 {date:"Wed Dec 15 2021",venue:"Press Club",location:"San Francisco, CA"}];
-display(arrayshow);
+//display(arrayshow);
+
+const API_KEY="46b173b5-c1d4-4189-905d-742aa79fd7d0";
+const showURL=`https://project-1-api.herokuapp.com/showdates?api_key=${API_KEY}`;
+
+axios.get(showURL).then(response=>{
+//console.log(response);
+const arrList=response.data;
+display(arrList);
+console.log(arrList);
+});
 
 function display(arrr){
     mainbox=document.getElementById('showBox');
@@ -34,19 +44,16 @@ showtable.appendChild(headrow);
 
 
 for(i=0;i<arrr.length;i++){
-    // console.log(arr);
     ticket=arrr[i];
-    // console.log(ticket.date);
     let rows=document.createElement('article');
     setAttributes(rows,{"class":"showMain__show__box__table__datarow","id":"selecthover"});
 
     let date=document.createElement('p');
     setAttributes(date,{"class":"showMain__show__box__table__datarow__date"});
-    date.innerHTML=ticket.date;
-    // console.log(date);
+    date.innerHTML=new Date(ticket.date).toLocaleDateString();
     let venue=document.createElement('p');
     setAttributes(venue,{"class":"showMain__show__box__table__datarow__venue"});
-    venue.innerHTML=ticket.venue;
+    venue.innerHTML=ticket.place;
     let location=document.createElement('p');
     setAttributes(location,{"class":"showMain__show__box__table__datarow__location"});
     location.innerHTML=ticket.location;
