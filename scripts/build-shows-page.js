@@ -13,11 +13,10 @@ axios.get(showURL).then(response=>{
 //console.log(response);
 const arrList=response.data;
 display(arrList);
-console.log(arrList);
 });
 
 function display(arrr){
-    mainbox=document.getElementById('showBox');
+mainbox=document.getElementById('showBox');
 let headdate=document.createElement('p');
 setAttributes(headdate,{"class":"showMain__show__box__table__headrow--heading"});
 headdate.innerHTML="DATE";
@@ -27,55 +26,59 @@ headvenue.innerHTML="VENUE";
 let headlocation=document.createElement('p');
 setAttributes(headlocation,{"class":"showMain__show__box__table__headrow--heading"});
 headlocation.innerHTML="LOCATION";
-
 let headrow=document.createElement('div');
 setAttributes(headrow,{"class":"showMain__show__box__table__headrow"});
-console.log(headdate.innerHTML);
-
 let showtable=document.createElement('article');
 setAttributes(showtable,{"class":"showMain__show__box__table"});
 showtable.appendChild(headrow);
 headrow.appendChild(headdate);
 headrow.appendChild(headvenue);
 headrow.appendChild(headlocation);
-
-
 showtable.appendChild(headrow);
+printShow();
 
+function printShow(){
+    for(i=0;i<arrr.length;i++){
+        ticket=arrr[i];
+        let rows=document.createElement('article');
+        setAttributes(rows,{"class":"showMain__show__box__table__datarow","id":"selecthover"});
+        let date=document.createElement('p');
+        setAttributes(date,{"class":"showMain__show__box__table__datarow__date"});
+        date.innerHTML=new Date(ticket.date).toLocaleDateString();
+        let venue=document.createElement('p');
+        setAttributes(venue,{"class":"showMain__show__box__table__datarow__venue"});
+        venue.innerHTML=ticket.place;
+        let location=document.createElement('p');
+        setAttributes(location,{"class":"showMain__show__box__table__datarow__location"});
+        location.innerHTML=ticket.location;
+        let buybutton=document.createElement('button');
+        buybutton.innerHTML="BUY TICKETS";
+        buybutton.classList.add("showMain__show__box__table__datarow__buybutton"); 
+        rows.appendChild(date);
+        rows.appendChild(venue);
+        rows.appendChild(location);
+        rows.appendChild(buybutton);
+        showtable.appendChild(rows);
 
-for(i=0;i<arrr.length;i++){
-    ticket=arrr[i];
-    let rows=document.createElement('article');
-    setAttributes(rows,{"class":"showMain__show__box__table__datarow","id":"selecthover"});
-
-    let date=document.createElement('p');
-    setAttributes(date,{"class":"showMain__show__box__table__datarow__date"});
-    date.innerHTML=new Date(ticket.date).toLocaleDateString();
-    let venue=document.createElement('p');
-    setAttributes(venue,{"class":"showMain__show__box__table__datarow__venue"});
-    venue.innerHTML=ticket.place;
-    let location=document.createElement('p');
-    setAttributes(location,{"class":"showMain__show__box__table__datarow__location"});
-    location.innerHTML=ticket.location;
-    let buybutton=document.createElement('button');
-    buybutton.innerHTML="BUY TICKETS";
-    buybutton.classList.add("showMain__show__box__table__datarow__buybutton"); 
-    rows.appendChild(date);
-    rows.appendChild(venue);
-    rows.appendChild(location);
-    rows.appendChild(buybutton);
-    showtable.appendChild(rows);
-
+        rows.addEventListener("click", (event)=>{
+            rows.classList.add(".selectedOne");
+            //console.log(show);
+        });   
+    }
 }
+// show.addEventListener("click",(event))=>
 let showContainer=document.createElement('article');
 setAttributes(showContainer,{"class":"showMain__show__box"});
 showContainer.appendChild(showtable);
 mainbox.appendChild(showContainer);
 }
 
-
 function setAttributes(el,attrs){
     for (let key in attrs){
         el.setAttribute(key, attrs[key]);
     }
 }
+
+// show.addEventListener("click",(event)=>{
+//     console.log(event.value);
+// });

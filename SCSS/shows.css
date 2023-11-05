@@ -77,18 +77,27 @@ tr {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   z-index: 1;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(39, 159, 189, 0.5)), url("../../Assets/Images/Photo-gallery-3.jpg") center/cover no-repeat;
 }
 @media screen and (max-width: 1030px) {
   .showMain__top-section {
-    height: 80vh;
+    height: -moz-max-content;
+    height: max-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
   }
 }
 @media screen and (max-width: 767px) {
   .showMain__top-section {
-    height: 70vh;
+    height: -moz-max-content;
+    height: max-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
   }
 }
 .showMain__top-section__content {
@@ -204,6 +213,7 @@ tr {
   justify-content: flex-start;
   border-bottom: 2px solid #AFAFAF;
   padding: 1rem 0.5rem 1rem 0.5rem;
+  z-index: 2;
 }
 .showMain__show__box__table__datarow__date {
   width: 25%;
@@ -222,11 +232,10 @@ tr {
   font-weight: 600;
   border-radius: 5px;
 }
-
-#selecthover:hover {
-  background-color: #AFAFAF;
+.showMain__show__box__table__datarow__buybutton:hover {
+  cursor: pointer;
+  color: white;
 }
-
-#selecthover:active {
+.showMain__show__box__table__datarow:hover, .showMain__show__box__table .selectedOne {
   background-color: #AFAFAF;
 }/*# sourceMappingURL=shows.css.map */

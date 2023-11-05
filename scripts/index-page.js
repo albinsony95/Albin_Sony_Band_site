@@ -1,7 +1,4 @@
-// let arrCommentlist=[{name:'Connor Walton',date:'02/17/2021',comment:'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.'},
-//                     {name:'Emilie Beach',date:'01/09/2021',comment:'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.'},
-//                     {name:'Miles Acosta',date:'12/20/2020',comment:'I can\'t stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can\'t get enough.'},
-//                     ]
+
 const API_KEY="46b173b5-c1d4-4189-905d-742aa79fd7d0";
 const commentURL=`https://project-1-api.herokuapp.com/comments?api_key=${API_KEY}`;
 let arrList=[];
@@ -17,15 +14,18 @@ button.addEventListener("click",(event)=>{
     let name=document.getElementById('cName');
     let date=new Date();
     let comment=document.getElementById('cComment');
-    let obj={name:"name.value",comment:"comment.value"};
+    let obj={name:name.value,comment:comment.value};
     axios.post(commentURL,obj).then(response=>{console.log(response.data);});
     axios.get(commentURL).then(response=>{
         arrList=response.data;
     arrayDisplay(arrList);
     });
+    name.value="";
+    comment.value="";
 });
 
 function arrayDisplay(arrCommentlist){
+    arrCommentlist=arraysort(arrCommentlist);
 let commentbox=document.getElementById('commentContainer');
 commentbox.innerHTML=" ";
 for(i=0;i<arrCommentlist.length;i++){
@@ -36,6 +36,11 @@ arraydata=arrCommentlist[i];
 
     let cdate=document.createElement('h5');
     setAttributes(cdate,{"class":"main__comment-container__commentBox__comDisplay__box__box1__box2--date"});
+    
+    // let str =new Date(arraydata.timestamp).toLocaleDateString();
+    // str=str.split('/');
+    // str=str.map.padStart(2, '0');
+    // console.log(str);
     cdate.innerHTML=new Date(arraydata.timestamp).toLocaleDateString();
     let eachCommentBox2 = document.createElement('div');
     setAttributes(eachCommentBox2,{"class":"main__comment-container__commentBox__comDisplay__box__box1__box2"});
@@ -65,4 +70,8 @@ function setAttributes(el,attrs){
     for (let key in attrs){
         el.setAttribute(key, attrs[key]);
     }
+}
+function arraysort(arr)
+{
+    return arr.sort((a,b)=> b.timestamp - a.timestamp);
 }
