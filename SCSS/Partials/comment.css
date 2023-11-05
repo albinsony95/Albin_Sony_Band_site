@@ -155,9 +155,9 @@ tr {
   margin-bottom: 2rem;
   border-radius: 5px;
 }
-.main__comment-container__commentBox__box__form--btnComment :hover {
-  background-color: #AFAFAF;
-  color: #323232;
+.main__comment-container__commentBox__box__form__btnComment:hover {
+  cursor: pointer;
+  color: white;
 }
 .main__comment-container__commentBox__comDisplay {
   display: flex;

@@ -72,11 +72,11 @@
                     font-weight: 600;
                     margin-bottom: 2rem;
                     border-radius: 5px;
-                    :hover{
-                        background-color: $silver;
-                        color: $BandSite-Black;
-                    }
                 }   
+                &__btnComment:hover{
+                    cursor: pointer;
+                    color:$white;
+                }
             }
         }
         &__comDisplay{

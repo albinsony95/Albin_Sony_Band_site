@@ -77,27 +77,18 @@ tr {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: -moz-max-content;
-  height: max-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
+  height: 70vh;
   z-index: 1;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(39, 159, 189, 0.5)), url("../../Assets/Images/Photo-gallery-3.jpg") center/cover no-repeat;
 }
 @media screen and (max-width: 1030px) {
   .showMain__top-section {
-    height: -moz-max-content;
-    height: max-content;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
+    height: 70vh;
   }
 }
 @media screen and (max-width: 767px) {
   .showMain__top-section {
-    height: -moz-max-content;
-    height: max-content;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
+    height: 70vh;
   }
 }
 .showMain__top-section__content {

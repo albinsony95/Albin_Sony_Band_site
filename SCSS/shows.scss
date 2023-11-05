@@ -6,19 +6,16 @@
     &__top-section{
         @include flex-box(column, center);
         width:100%;
-        height:max-content;
-        min-height: fit-content;
+        height:70vh;
         z-index: 1;
         background: linear-gradient(rgba(50, 50, 50, 0.5),(rgba(39, 159, 189, 0.5))), 
                     url("../../Assets/Images/Photo-gallery-3.jpg")center/cover no-repeat;
         
         @include tablet{
-        height:max-content; 
-        min-height: fit-content;
+        height:70vh; 
         }
         @include mobile{
-            height:max-content;
-            min-height: fit-content;
+            height:70vh;
         }
         &__content{
             @include flex-box(row, flex-start);

@@ -5,7 +5,6 @@ let arrList=[];
 axios.get(commentURL).then(response=>{
 arrList=response.data;
 arrayDisplay(arrList);
-//console.log(arrList);
 });
 
 const button=document.getElementById('bcomment');
@@ -15,7 +14,7 @@ button.addEventListener("click",(event)=>{
     let date=new Date();
     let comment=document.getElementById('cComment');
     let obj={name:name.value,comment:comment.value};
-    axios.post(commentURL,obj).then(response=>{console.log(response.data);});
+    axios.post(commentURL,obj).then(response=>{});
     axios.get(commentURL).then(response=>{
         arrList=response.data;
     arrayDisplay(arrList);
@@ -37,10 +36,6 @@ arraydata=arrCommentlist[i];
     let cdate=document.createElement('h5');
     setAttributes(cdate,{"class":"main__comment-container__commentBox__comDisplay__box__box1__box2--date"});
     
-    // let str =new Date(arraydata.timestamp).toLocaleDateString();
-    // str=str.split('/');
-    // str=str.map.padStart(2, '0');
-    // console.log(str);
     cdate.innerHTML=new Date(arraydata.timestamp).toLocaleDateString();
     let eachCommentBox2 = document.createElement('div');
     setAttributes(eachCommentBox2,{"class":"main__comment-container__commentBox__comDisplay__box__box1__box2"});

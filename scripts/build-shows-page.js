@@ -1,16 +1,15 @@
-let arrayshow=[{date:"Mon Sept 06 2021",venue:"Ronald Lane",location:"San Francisco, CA"},
-                {date:"Tue Sept 21 2021",venue:"Pier 3 East",location:"San Francisco, CA"},
-                {date:"Fri Oct 15 2021",venue:"View Lounge",location:"San Francisco, CA"},
-                {date:"Sat Nov 06 2021 ",venue:"Hyatt Agency",location:"San Francisco, CA"},
-                {date:"Fri Nov 26 2021",venue:"Moscow Center",location:"San Francisco, CA"},
-                {date:"Wed Dec 15 2021",venue:"Press Club",location:"San Francisco, CA"}];
-//display(arrayshow);
+// let arrayshow=[{date:"Mon Sept 06 2021",venue:"Ronald Lane",location:"San Francisco, CA"},
+//                 {date:"Tue Sept 21 2021",venue:"Pier 3 East",location:"San Francisco, CA"},
+//                 {date:"Fri Oct 15 2021",venue:"View Lounge",location:"San Francisco, CA"},
+//                 {date:"Sat Nov 06 2021 ",venue:"Hyatt Agency",location:"San Francisco, CA"},
+//                 {date:"Fri Nov 26 2021",venue:"Moscow Center",location:"San Francisco, CA"},
+//                 {date:"Wed Dec 15 2021",venue:"Press Club",location:"San Francisco, CA"}];
+
 
 const API_KEY="46b173b5-c1d4-4189-905d-742aa79fd7d0";
 const showURL=`https://project-1-api.herokuapp.com/showdates?api_key=${API_KEY}`;
 
 axios.get(showURL).then(response=>{
-//console.log(response);
 const arrList=response.data;
 display(arrList);
 });
@@ -62,11 +61,9 @@ function printShow(){
 
         rows.addEventListener("click", (event)=>{
             rows.classList.add(".selectedOne");
-            //console.log(show);
         });   
     }
 }
-// show.addEventListener("click",(event))=>
 let showContainer=document.createElement('article');
 setAttributes(showContainer,{"class":"showMain__show__box"});
 showContainer.appendChild(showtable);
@@ -78,7 +75,3 @@ function setAttributes(el,attrs){
         el.setAttribute(key, attrs[key]);
     }
 }
-
-// show.addEventListener("click",(event)=>{
-//     console.log(event.value);
-// });
